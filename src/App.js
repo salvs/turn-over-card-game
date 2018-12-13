@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Board from './Board';
 
-class App extends Component {
+
+
+class HelloMF extends React.Component {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container2">
+        <TopMenu />
+        <GameSelect/>
+        <Board />
       </div>
+      
     );
   }
 }
 
-export default App;
+class TopMenu extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Chose a number of cards to play</h1>
+      </div>
+    )
+  }
+}
+
+class GameSelect extends React.Component {
+  render() {
+    return (
+      <div className="box2">
+        <select name="gameType">
+          <option>4 x 4</option>
+          <option>8 x 8</option>
+        </select> 
+      </div>
+    )
+  }
+
+}
+
+export default HelloMF;
